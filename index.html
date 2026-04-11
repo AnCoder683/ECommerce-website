@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- common CSS -->
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+
+    <!-- CSS library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Nên gom hết các font chữ vào chung 1 link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Long+Cang&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com?plugins=typography,forms,aspect-ratio"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#281A51",
+              text2: "#000000",
+              text: "#FAFAFA",
+            },
+            spacing: {
+              128: "32rem",
+            },
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+        // Kích hoạt các plugin chính thức nếu cần
+        plugins: [
+          // tailwind.plugin.lineClamp,
+        ],
+      };
+    </script>
+
+    <style type="text/tailwindcss">
+      @layer base {
+        h1 {
+          @apply text-2xl font-bold;
+        }
+
+        input {
+          @apply rounded-md;
+        }
+        table {
+          @apply border-collapse border-primary;
+        }
+      }
+
+      @layer components {
+        .btn {
+          @apply p-2 bg-primary text-white rounded;
+        }
+
+        .card {
+          @apply hover:shadow-md border border-transparent border-solid hover:border-slate-300 transition rounded-xl text-center p-4;
+        }
+      }
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <h1 class="text-red-400">San pham cua toi</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  </body>
+</html>
