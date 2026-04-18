@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Home</title>
 
     <!-- common CSS -->
     <link rel="stylesheet" href="./assets/css/reset.css" />
@@ -94,7 +94,7 @@
 
         /* HEADER: Start */
         .header {
-          @apply pt-[38px] pb-[16px] px-[135px] px-[30px] mb-[60px] flex justify-between items-center border-b-2;
+          @apply pt-[38px] pb-[16px] px-[135px] px-[30px] flex justify-between items-center border-b-2;
         }
 
         .logo {
@@ -116,12 +116,29 @@
         }
 
         .header-search {
-          @apply hidden relative;
-          @apply lg:flex lg:items-center;
+          @apply flex items-center relative;
         }
 
         .header-search input {
           @apply rounded-sm bg-secondary text-xs font-normal py-[7px] pl-[20px] pr-[70px] focus:ring-2 focus:ring-gray-300 focus:border-transparent border-transparent ring-2 ring-gray-200;
+        }
+
+        .right-header {
+          @apply flex gap-[24px];
+          @apply max-lg:hidden;
+        }
+
+        .icons {
+          @apply flex gap-[16px];
+        }
+
+        .icons .icon-wrapper {
+          @apply relative;
+        }
+
+        .icons .icon-wrapper:not(:last-child)::after {
+          content: "1";
+          @apply absolute inline-block size-4 bg-[#DB4444] top-0 right-0 flex justify-center items-center rounded-full text-white;
         }
 
         .hamburger-icon {
@@ -132,61 +149,16 @@
         /* HEADER: End */
 
         /* MAIN: Start */
-        .main-container {
-          @apply mb-[140px] flex justify-center items-center;
+        .main {
+          @apply mx-[135px];
         }
 
-        .img-container {
-          @apply hidden  basis-2/3;
-          @apply lg:block;
+        .road-map {
+          @apply my-[80px];
         }
 
-        .img-container img {
-          @apply w-full h-full object-cover;
-        }
-
-        .login-container {
-          @apply basis-1/2 flex flex-col items-center;
-        }
-
-        .login-header {
-          @apply mb-[48px];
-        }
-
-        .login-header h1 {
-          @apply font-['inter'] text-[36px] font-medium mb-[24px];
-        }
-
-        .login-header p {
-          @apply text-[16px];
-        }
-
-        .login-form {
-          @apply flex flex-col gap-[40px] mb-[40px];
-        }
-
-        .login-form .input {
-          @apply border-0 border-b border-black p-0 pb-[8px] focus:ring-0 focus:border-black;
-        }
-
-        .login-button {
-          @apply bg-[#DB4444] text-text rounded px-[48px] py-[16px] whitespace-nowrap;
-        }
-
-        .lg-with-gg {
-          @apply flex justify-center items-center px-[86px] py-[16px] gap-[16px] rounded border border-[#000000] mb-[32px];
-        }
-
-        .login-href {
-          @apply flex justify-center;
-        }
-
-        .login-href a {
-          @apply ml-[16px] text-[#DB4444];
-        }
-
-        .btn-group {
-          @apply flex justify-between items-center;
+        .road-map a:not(:last-child) {
+          @apply border-r-2 border-gray-600 px-2;
         }
         /* MAIN: End */
 
@@ -270,52 +242,302 @@
         <a href="">About</a>
         <a href="">Sign Up</a>
       </nav>
-      <div class="header-search">
-        <input type="text" placeholder="What are you looking for?" />
-        <svg
-          class="absolute right-[12px] cursor-pointer"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M20 20L16.2223 16.2156M18.3158 11.1579C18.3158 13.0563 17.5617 14.8769 16.2193 16.2193C14.8769 17.5617 13.0563 18.3158 11.1579 18.3158C9.2595 18.3158 7.43886 17.5617 6.0965 16.2193C4.75413 14.8769 4 13.0563 4 11.1579C4 9.2595 4.75413 7.43886 6.0965 6.0965C7.43886 4.75413 9.2595 4 11.1579 4C13.0563 4 14.8769 4.75413 16.2193 6.0965C17.5617 7.43886 18.3158 9.2595 18.3158 11.1579V11.1579Z"
-            stroke="black"
-            stroke-width="1.5"
-            stroke-linecap="round"
-          />
-        </svg>
+      <div class="right-header">
+        <div class="header-search">
+          <input type="text" placeholder="What are you looking for?" />
+          <svg
+            class="absolute right-[12px] cursor-pointer"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 20L16.2223 16.2156M18.3158 11.1579C18.3158 13.0563 17.5617 14.8769 16.2193 16.2193C14.8769 17.5617 13.0563 18.3158 11.1579 18.3158C9.2595 18.3158 7.43886 17.5617 6.0965 16.2193C4.75413 14.8769 4 13.0563 4 11.1579C4 9.2595 4.75413 7.43886 6.0965 6.0965C7.43886 4.75413 9.2595 4 11.1579 4C13.0563 4 14.8769 4.75413 16.2193 6.0965C17.5617 7.43886 18.3158 9.2595 18.3158 11.1579V11.1579Z"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <div class="icons">
+          <div class="icon-wrapper">
+            <svg
+              class="heart"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+
+          <div class="icon-wrapper">
+            <svg
+              class="cart"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3 5H7L10 22H26"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+
+          <div class="icon-wrapper">
+            <svg
+              class="profile"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 27V24.3333C24 22.9188 23.5224 21.5623 22.6722 20.5621C21.8221 19.5619 20.669 19 19.4667 19H11.5333C10.331 19 9.17795 19.5619 8.32778 20.5621C7.47762 21.5623 7 22.9188 7 24.3333V27"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16.5 14C18.9853 14 21 11.9853 21 9.5C21 7.01472 18.9853 5 16.5 5C14.0147 5 12 7.01472 12 9.5C12 11.9853 14.0147 14 16.5 14Z"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </header>
     <!-- Header: End -->
 
     <!-- Main Section: Start -->
-    <section class="main-container">
-      <div class="img-container">
-        <img src="../public/image1.png" alt="" />
+    <section class="max-w-6xl mx-auto px-6 py-10 text-[#111]">
+      <nav class="mb-10 text-sm text-gray-400">
+        <a href="#" class="hover:text-black">Home</a>
+        <span class="mx-2">/</span>
+        <a href="#" class="text-black">Cart</a>
+      </nav>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border-separate border-spacing-y-6">
+          <thead>
+            <tr class="shadow-sm">
+              <th class="bg-white text-left font-medium text-sm px-6 py-5">
+                Product
+              </th>
+              <th class="bg-white text-left font-medium text-sm px-6 py-5">
+                Price
+              </th>
+              <th class="bg-white text-left font-medium text-sm px-6 py-5">
+                Quantity
+              </th>
+              <th class="bg-white text-right font-medium text-sm px-6 py-5">
+                Subtotal
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="shadow-sm">
+              <td class="bg-white px-6 py-6">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="relative w-14 h-14 flex items-center justify-center"
+                  >
+                    <button
+                      class="absolute -top-2 -left-2 w-4 h-4 rounded-full bg-[#DB4444] text-white text-[10px] leading-none flex items-center justify-center "
+                    >
+                      ×
+                    </button>
+                    <img
+                      src="../public/product-imgs/manhinh.png"
+                      alt="LCD Monitor"
+                      class="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                  <span class="text-sm font-medium">LCD Monitor</span>
+                </div>
+              </td>
+
+              <td class="bg-white px-6 py-6 text-sm">$650</td>
+
+              <td class="bg-white px-6 py-6">
+                <div
+                  class="inline-flex items-center border border-gray-300 rounded px-3 py-2 text-sm"
+                >
+                  <span class="mr-4">01</span>
+                  <div class="flex flex-col leading-none">
+                    <button class="text-gray-500 hover:text-black">
+                      <svg class="w-3 h-3" viewBox="0 0 10 6" fill="none">
+                        <path
+                          d="M1 5L5 1L9 5"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                        />
+                      </svg>
+                    </button>
+                    <button class="text-gray-500 hover:text-black">
+                      <svg class="w-3 h-3" viewBox="0 0 10 6" fill="none">
+                        <path
+                          d="M1 1L5 5L9 1"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </td>
+
+              <td class="bg-white px-6 py-6 text-sm text-right">$650</td>
+            </tr>
+
+            <tr class="shadow-sm">
+              <td class="bg-white px-6 py-6">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="relative w-14 h-14 flex items-center justify-center"
+                  >
+                    <img
+                      src="../public/image1.png"
+                      alt="H1 Gamepad"
+                      class="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                  <span class="text-sm font-medium">H1 Gamepad</span>
+                </div>
+              </td>
+
+              <td class="bg-white px-6 py-6 text-sm">$550</td>
+
+              <td class="bg-white px-6 py-6">
+                <div
+                  class="inline-flex items-center border border-gray-300 rounded px-3 py-2 text-sm"
+                >
+                  <span class="mr-4">02</span>
+                  <div class="flex flex-col leading-none">
+                    <button class="text-gray-500 hover:text-black">
+                      <svg class="w-3 h-3" viewBox="0 0 10 6" fill="none">
+                        <path
+                          d="M1 5L5 1L9 5"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                        />
+                      </svg>
+                    </button>
+                    <button class="text-gray-500 hover:text-black">
+                      <svg class="w-3 h-3" viewBox="0 0 10 6" fill="none">
+                        <path
+                          d="M1 1L5 5L9 1"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </td>
+
+              <td class="bg-white px-6 py-6 text-sm text-right">$1100</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="login-container">
-        <div class="flex flex-col">
-          <div class="login-header">
-            <h1>Log in to Exclusive</h1>
-            <p>Enter your details below</p>
-          </div>
-          <form class="login-form" action="">
-            <input
-              class="input"
-              type="text"
-              placeholder="Email or Phone Number"
-            />
-            <input class="input" type="password" placeholder="Password" />
-          </form>
-          <div class="btn-group">
-            <button class="login-button">Log In</button>
-            <div class="login-href">
-              <a href="">Forget Password?</a>
+
+      <div class="mt-6 flex items-center justify-between">
+        <button
+          class="border border-gray-300 px-8 py-4 text-sm font-medium hover:bg-gray-50 transition rounded"
+        >
+          Return To Shop
+        </button>
+
+        <button
+          class="border border-gray-300 px-8 py-4 text-sm font-medium hover:bg-gray-50 transition rounded"
+        >
+          Update Cart
+        </button>
+      </div>
+
+      <div class="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start ">
+        <div class="flex flex-col sm:flex-row gap-4">
+          <input
+            type="text"
+            placeholder="Coupon Code"
+            class="w-full sm:w-72 border border-gray-300 px-4 py-4 text-sm outline-none rounded"
+          />
+          <button
+            class="bg-[#DB4444] text-white px-8 py-4 text-sm font-medium hover:opacity-90 transition rounded"
+          >
+            Apply Coupon
+          </button>
+        </div>
+
+        <div class="border border-black p-6 max-w-md w-full justify-self-end rounded">
+          <h3 class="text-xl font-medium mb-6">Cart Total</h3>
+
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center justify-between border-b pb-4">
+              <span>Subtotal:</span>
+              <span>$1750</span>
+            </div>
+
+            <div class="flex items-center justify-between border-b pb-4">
+              <span>Shipping:</span>
+              <span>Free</span>
+            </div>
+
+            <div class="flex items-center justify-between pb-2">
+              <span>Total:</span>
+              <span>$1750</span>
             </div>
           </div>
+
+          <button
+            class="mt-4 w-full bg-[#DB4444] text-white py-4 text-sm font-medium hover:opacity-90 transition rounded"
+          >
+            Procees to checkout
+          </button>
         </div>
       </div>
     </section>
